@@ -1,5 +1,4 @@
 
-
 #include "lcdutils.h"
 
 #include "lcddraw.h"
@@ -75,11 +74,11 @@ void newShape(u_int color,u_int color2){
 
   }
 
-  drawString5x7(20,100,"THIS",COLOR_GOLD,COLOR_PURPLE);
+  drawString8x12(20,100,"THIS",COLOR_GOLD,COLOR_PURPLE);
 
-  drawString5x7(20,110,"A",COLOR_GREEN,COLOR_PURPLE);
+  drawString8x12(20,110,"A",COLOR_GREEN,COLOR_PURPLE);
 
-  drawString5x7(20,120,"TOY",COLOR_GREEN,COLOR_PURPLE);
+  drawString8x12(20,120,"TOY",COLOR_GREEN,COLOR_PURPLE);
 
 
 
@@ -122,17 +121,17 @@ void newShapeTwo(u_int color,u_int color2){
 
   }
 
-  drawString5x7(20,100,"THIS",COLOR_GOLD,COLOR_PURPLE);
+  drawString8x12(20,100,"THIS",COLOR_GOLD,COLOR_PURPLE);
 
-  drawString5x7(20,110, "IS A",COLOR_GOLD,COLOR_RED);
+  drawString8x12(20,110, "IS A",COLOR_GOLD,COLOR_RED);
 
-  drawString5x7(20,120,"TOY",COLOR_GOLD,COLOR_PURPLE);
+  drawString8x12(20,120,"TOY",COLOR_GOLD,COLOR_PURPLE);
 }
 
 void newShapeThree(u_int Color){
 clearScreen(COLOR_BLACK);
 fillRectangle(30,30, 50, 55, Color);
-drawString5x7(20,20, "This is a rectangle", COLOR_GREEN, COLOR_RED);
+drawString8x12(20,20, "This is a rectangle", COLOR_GREEN, COLOR_RED);
 }
 void clearScreen(u_int colorBGR)
 
@@ -144,7 +143,7 @@ void clearScreen(u_int colorBGR)
 
   fillRectangle(0, 0, screenWidth, screenHeight, colorBGR);
 
-}void drawChar5x7(u_char rcol, u_char rrow, char c,
+}void drawChar8x12(u_char rcol, u_char rrow, char c,
 
 		  u_int fgColorBGR, u_int bgColorBGR)
 
@@ -160,13 +159,13 @@ void clearScreen(u_int colorBGR)
 
 
 
-  lcd_setArea(rcol, rrow, rcol + 4, rrow + 7); /* relative to requested col/row */
+  lcd_setArea(rcol, rrow, rcol + 11, rrow + 8); /* relative to requested col/row */
 
   while (row < 8) {
 
-    while (col < 5) {
+    while (col < 12) {
 
-      u_int colorBGR = (font_5x7[oc][col] & bit) ? fgColorBGR : bgColorBGR;
+      u_int colorBGR = (font_8x12[oc][col] & bit) ? fgColorBGR : bgColorBGR;
 
       lcd_writeColor(colorBGR);
 
@@ -182,7 +181,7 @@ void clearScreen(u_int colorBGR)
 
   }
 
-}void drawString5x7(u_char col, u_char row, char *string,
+}void drawString8x12(u_char col, u_char row, char *string,
 
 		    u_int fgColorBGR, u_int bgColorBGR)
 
@@ -192,9 +191,9 @@ void clearScreen(u_int colorBGR)
 
   while (*string) {
 
-    drawChar5x7(cols, row, *string++, fgColorBGR, bgColorBGR);
+    drawChar8x12(cols, row, *string++, fgColorBGR, bgColorBGR);
 
-    cols += 6;
+    cols += 13;
 
   }
 

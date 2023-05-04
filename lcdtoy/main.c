@@ -36,9 +36,9 @@ int main(void) {
 
   clearScreen(COLOR_RED);
 
-  drawString5x7(20,50,"HELLO THERE!",COLOR_ORANGE,COLOR_BLUE);
+  drawString8x12(20,50,"HELLO THERE!",COLOR_ORANGE,COLOR_BLUE);
 
-  drawString5x7(20,60,"PICK A STATE",COLOR_BLUE,COLOR_ORANGE);
+  drawString8x12(20,60,"PICK A STATE",COLOR_BLUE,COLOR_ORANGE);
 
   enableWDTInterrupts();/* enable periodic interrupt */
 

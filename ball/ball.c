@@ -100,7 +100,7 @@ draw_ball(int col, int row, unsigned short color)
 
 {
 
-  fillRectangle(col-1, row-1, 3, 3, color);
+  fillRectangle(col-1, row-1, 10, 20, color);
 
 }
 
@@ -227,7 +227,7 @@ void main()
 
 
 
-  clearScreen(COLOR_BLUE);
+  clearScreen(COLOR_BLACK);
 
 
   while (1) {/* forever */
